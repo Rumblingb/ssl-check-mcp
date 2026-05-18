@@ -7,7 +7,7 @@ Usage:
 """
 
 import json, ssl, socket, datetime, sys
-from mcp.server import Server, stdio_server
+from mcp.server.lowlevel import Server, stdio_server
 
 server = Server("ssl-check-mcp")
 
