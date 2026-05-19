@@ -4,16 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SSL Check MCP Server</title>
-<meta name="description" content="Check SSL/TLS certificate details for any domain — issuer, expiry date, SANs, and full chain information. Uses Python's built-in ssl module. No external AP...">
+<meta name="description" content="Check SSL/TLS certificate details for any domain — issuer, expiry date, SANs, and full chain information. Uses Python's built-in ssl module. No external API needed.">
 <meta property="og:title" content="SSL Check MCP Server">
-<meta property="og:description" content="Check SSL/TLS certificate details for any domain — issuer, expiry date, SANs, and full chain information. Uses Python's ...">
+<meta property="og:description" content="Check SSL/TLS certificate details for any domain — issuer, expiry date, SANs, and full chain information. No external API needed.">
 <meta property="og:url" content="https://rumblingb.github.io/ssl-check-mcp/">
+<meta property="og:image" content="https://rumblingb.github.io/agentpay-highway/og.png">
+<meta property="og:type" content="website">
 <link rel="canonical" href="https://rumblingb.github.io/ssl-check-mcp/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SSL Check MCP Server",
+  "description": "Check SSL/TLS certificate details for any domain — issuer, expiry date, SANs, and full chain information. No external API needed.",
+  "url": "https://rumblingb.github.io/ssl-check-mcp/",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free — 200 queries per day"
+    },
+    {
+      "@type": "Offer",
+      "price": "19",
+      "priceCurrency": "USD",
+      "description": "Pro — unlimited queries, priority support"
+    }
+  ]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a0f;color:#e0e0e0;line-height:1.6}
 .container{max-width:920px;margin:0 auto;padding:2rem 1.5rem}
-.hero{text-align:center;padding:5rem 0 3rem}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;color:#a78bfa;text-decoration:none;font-size:.875rem;margin-bottom:2rem;opacity:.8;transition:opacity .2s}
+.back-link:hover{opacity:1}
+.hero{text-align:center;padding:4rem 0 3rem}
 .hero h1{font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#7c3aed,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
 .hero p{font-size:1.15rem;color:#888;max-width:680px;margin:0 auto 2rem}
 .badges{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
@@ -58,6 +87,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .usecase-box h3{color:#22d3ee;margin-bottom:.75rem}
 .usecase-box p{color:#888;font-size:.9rem}
 .usecase-box code{background:rgba(6,182,212,.1);padding:.15rem .4rem;border-radius:4px;font-size:.85rem;color:#22d3ee}
+.usecase-box ul{list-style:none;margin:.75rem 0}
+.usecase-box li{padding:.3rem 0;color:#888;font-size:.9rem}
+.usecase-box li::before{content:"\2192  ";color:#22d3ee}
 footer{text-align:center;padding:3rem 0;color:#666;font-size:.85rem;border-top:1px solid rgba(255,255,255,.06);margin-top:3rem}
 footer a{color:#a78bfa;text-decoration:none}
 footer a:hover{text-decoration:underline}
@@ -67,8 +99,10 @@ footer a:hover{text-decoration:underline}
 <body>
 <div class="container">
 
+<a href="https://rumblingb.github.io/agentpay-labs-hub/" class="back-link">&#8592; All MCP Servers</a>
+
 <div class="hero">
-<h1>🔒 Ssl Check MCP</h1>
+<h1>&#128274; SSL Check MCP</h1>
 <p>Check SSL/TLS certificate details for any domain — issuer, expiry date, SANs, and full chain information. Uses Python's built-in ssl module. No external API needed.</p>
 <div class="badges">
 <span class="badge badge-mcp">MCP Server</span>
@@ -76,8 +110,8 @@ footer a:hover{text-decoration:underline}
 <span class="badge badge-pro">$19/mo Pro</span>
 </div>
 <div class="cta-group">
-<a href="https://github.com/Rumblingb/ssl-check-mcp" class="cta cta-secondary">GitHub →</a>
-<a href="https://buy.stripe.com/dRm6oJ4Hd2Jugek0wz1oI0m" class="cta cta-primary">Subscribe Pro — $19/mo</a>
+<a href="https://github.com/Rumblingb/ssl-check-mcp" class="cta cta-secondary">GitHub &#8594;</a>
+<a href="https://buy.stripe.com/dRm6oJ4Hd2Jugek0wz1oI0m" class="cta cta-primary">Subscribe Pro &#8212; $19/mo</a>
 </div>
 </div>
 
@@ -85,22 +119,22 @@ footer a:hover{text-decoration:underline}
 
 
 <div class="section">
-<h2>🔧 Available Tools</h2>
+<h2>&#128295; Available Tools</h2>
 <div class="tools-grid">
 <div class="tool-card"><h3>ssl_check_domain</h3><p>Check SSL certificate — issuer, expiry, days remaining, SANs</p></div>
 <div class="tool-card"><h3>ssl_check_chain</h3><p>Full certificate chain information and validation</p></div>
 <div class="tool-card"><h3>No API needed</h3><p>Uses Python's built-in ssl + socket modules</p></div>
 <div class="tool-card"><h3>Expiry alerts</h3><p>Days remaining calculation for renewal planning</p></div>
-<div class="tool-card"><h3>Multiple domains</h3><p>Check any domain with any port number</p></div>
+<div class="tool-card"><h3>Multiple domains</h3><p>Check any domain with custom port number</p></div>
 </div>
 </div>
 
 
 <div class="section">
-<h2>💰 Simple Pricing</h2>
+<h2>&#128176; Simple Pricing</h2>
 <div class="pricing-cards">
 <div class="price-card">
-<h3>🆓 Free</h3>
+<h3>&#127359; Free</h3>
 <div class="price">$0<span>/mo</span></div>
 <ul>
 <li>200 queries per day</li>
@@ -111,7 +145,7 @@ footer a:hover{text-decoration:underline}
 <a href="https://github.com/Rumblingb/ssl-check-mcp" class="cta-btn secondary">Get Started</a>
 </div>
 <div class="price-card featured">
-<h3>⭐ Pro</h3>
+<h3>&#11088; Pro</h3>
 <div class="price">$19<span>/mo</span></div>
 <ul>
 <li>Unlimited queries</li>
@@ -119,20 +153,25 @@ footer a:hover{text-decoration:underline}
 <li>Priority support</li>
 <li>Early feature access</li>
 </ul>
-<a href="https://buy.stripe.com/dRm6oJ4Hd2Jugek0wz1oI0m" class="cta-btn primary">Subscribe →</a>
+<a href="https://buy.stripe.com/dRm6oJ4Hd2Jugek0wz1oI0m" class="cta-btn primary">Subscribe &#8594;</a>
 </div>
 </div>
 </div>
 
 <div class="usecase-box">
-<h3>💡 Example Usage</h3>
-<p>Configure this MCP server in your AI client (Claude Desktop, Cursor, VS Code + Continue, etc.) and ask:</p>
-<p style="margin-top:.75rem;font-size:.9rem;color:#999"><em>Describe natural language interactions your AI assistant can use with this server.</em></p>
+<h3>&#128161; Example Usage</h3>
+<p>Configure this MCP server in Claude Desktop, Cursor, or VS Code + Continue, then ask:</p>
+<ul>
+<li>"Check the SSL certificate for api.mycompany.com"</li>
+<li>"How many days until the cert on stripe.com expires?"</li>
+<li>"Validate the full certificate chain for my staging domain"</li>
+<li>"List all SANs on the certificate for github.com"</li>
+</ul>
 </div>
 
 
 <div class="install-box">
-<h2>⚡ Quick Install</h2>
+<h2>&#9889; Quick Install</h2>
 <pre><code>git clone https://github.com/Rumblingb/ssl-check-mcp.git
 cd ssl-check-mcp
 pip install -r requirements.txt
@@ -140,8 +179,8 @@ python3 server.py</code></pre>
 </div>
 
 <footer>
-<p>Ssl Check MCP &mdash; <a href="https://github.com/Rumblingb/ssl-check-mcp">GitHub</a></p>
-<p style="margin-top:.5rem">Part of the <a href="https://rumblingb.github.io/agentpay-labs-hub/">Rumblingb MCP Ecosystem</a> — 67+ MCP servers for AI agents</p>
+<p>SSL Check MCP &mdash; <a href="https://github.com/Rumblingb/ssl-check-mcp">GitHub</a></p>
+<p style="margin-top:.5rem">Part of the <a href="https://rumblingb.github.io/agentpay-labs-hub/">AgentPay Labs MCP Ecosystem</a> &mdash; 67+ MCP servers for AI agents</p>
 </footer>
 
 </div>
